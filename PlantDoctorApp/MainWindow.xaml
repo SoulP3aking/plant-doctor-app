@@ -1,0 +1,27 @@
+<Window x:Class="PlantDoctorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Plant Doctor" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right" Margin="0 0 0 10">
+            <TextBlock Text="Language:" VerticalAlignment="Center" Margin="0 0 5 0"/>
+            <ComboBox x:Name="LanguageSelector" Width="100" SelectionChanged="LanguageSelector_SelectionChanged">
+                <ComboBoxItem Tag="en" IsSelected="True">English</ComboBoxItem>
+                <ComboBoxItem Tag="de">Deutsch</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <Border Grid.Row="1" AllowDrop="True" Drop="ImageDrop" Background="#f0f0f0" BorderBrush="#ccc" BorderThickness="2" CornerRadius="4" Padding="10">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="DropArea">
+                <TextBlock Text="Drag images here" HorizontalAlignment="Center" Margin="0 0 0 10"/>
+                <Button Content="Select Images" Click="SelectImages_Click" Width="120"/>
+            </StackPanel>
+        </Border>
+        <ListBox x:Name="HistoryList" Grid.Row="2" Margin="0 10 0 0" Height="150"/>
+    </Grid>
+</Window>
