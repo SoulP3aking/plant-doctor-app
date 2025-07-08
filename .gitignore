@@ -1,0 +1,5 @@
+bin/
+obj/
+history.db
+*.user
+*.vs/
